@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.principal {
+  grid-area: header;
+  background-color: rgb(34, 34, 34);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.asidebar {
+  grid-area: asidebar;
+  background-color: rgba(192, 192, 192, 0.753);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: x-large;
+}
+.asidebar a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.asidebar a:hover {
+  color: rgb(122, 122, 122);
+}
+.contenido {
+  grid-area: contenido;
+  background-color: rgba(192, 192, 192, 0.753);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 15px;
+}
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.card button:hover {
+  background-color: #0056b3;
+}
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.card p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+.pie {
+  grid-area: pie;
+  background-color: rgb(34, 34, 34);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: lightgray;
+}
+.contenido {
+  grid-area: contenido;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  background-color: rgba(192, 192, 192, 0.753);
+  padding: 10px;
+  overflow: auto;
+}
+
+.contenido img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+.contenido .card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  border-radius: 10px;
+  border: 5px solid black;
+}
+
+.grid-conteiner {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "asidebar contenido"
+    "pie pie";
+  min-height: 100vh;
+  grid-template-rows: 10% 90% 10%;
+  gap: 10px;
+  grid-template-columns: 1fr 4fr;
+}
+@media (max-width: 1700px) {
+  .contenido {
+    grid-template-columns: 1fr;
+    gap: 120px;
+  }
+  .card {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenido {
+    grid-template-columns: 1fr;
+    gap: 160px; 
+  }
+  .card {
+    width: 100%;
+    padding: 15px;
+  }
+}
