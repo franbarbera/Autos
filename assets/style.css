@@ -10,15 +10,15 @@
   align-items: center;
   justify-content: space-between;
 }
-.principal h1{
+.principal h1 {
   margin-left: 20%;
 }
-.icons{
+.icons {
   display: flex;
   margin-right: 20%;
   font-size: x-large;
 }
-.icon-2{
+.icon-2 {
   margin-left: 50%;
 }
 .asidebar {
@@ -73,6 +73,7 @@
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  width: 150px;
 }
 .card p {
   margin: 5px 0;
@@ -113,8 +114,8 @@ footer a:hover {
 .contenido .card {
   position: relative;
   width: 100%;
-  max-width: 400px;
-  height: 250px;
+  max-width: 350px;
+  height: auto;
   border-radius: 10px;
   border: 5px solid black;
 }
@@ -144,10 +145,18 @@ footer a:hover {
 @media (max-width: 480px) {
   .contenido {
     grid-template-columns: 1fr;
-    gap: 160px; 
+    gap: 160px;
   }
   .card {
     width: 100%;
     padding: 15px;
+  }
+}
+@media (max-width: 700px) {
+  .asidebar {
+    display: none;
+  }
+  .contenido {
+    width: 100vh;
   }
 }
