@@ -1,6 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  font-family: Arial, sans-serif;
+  width: 100%;
 }
 .principal {
   grid-area: header;
@@ -9,17 +15,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 15px;
 }
 .principal h1 {
-  margin-left: 20%;
+  margin: 0;
+  font-size: 1.5rem;
 }
 .icons {
   display: flex;
-  margin-right: 20%;
+  gap: 20px;
   font-size: x-large;
-}
-.icon-2 {
-  margin-left: 50%;
 }
 .asidebar {
   grid-area: asidebar;
@@ -28,29 +33,25 @@
   flex-direction: column;
   align-items: center;
   font-size: x-large;
+  padding: 10px;
 }
 .asidebar a {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  margin-top: 5%;
+  margin: 10px 0;
 }
 .asidebar a:hover {
   color: rgb(122, 122, 122);
 }
-.contenido {
-  grid-area: contenido;
-  background-color: rgba(192, 192, 192, 0.753);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 15px;
-  padding: 15px;
-}
+
 .card {
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;
   text-align: center;
+  max-width: 300px;
+  width: 100%;
 }
 .card img {
   max-width: 100%;
@@ -86,6 +87,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 footer a {
   color: white;
@@ -95,15 +97,17 @@ footer a:hover {
   text-decoration: underline;
   color: lightgray;
 }
+
 .contenido {
   grid-area: contenido;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 10px;
+  justify-content: center;
   background-color: rgba(192, 192, 192, 0.753);
   padding: 10px;
   overflow: auto;
+  grid-template-columns: 1fr;
+  gap: 15px;
 }
 
 .contenido img {
@@ -114,10 +118,11 @@ footer a:hover {
 .contenido .card {
   position: relative;
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
   height: auto;
   border-radius: 15px;
-  border: 5px solid grey;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .grid-conteiner {
@@ -127,7 +132,7 @@ footer a:hover {
     "asidebar contenido"
     "pie pie";
   min-height: 100vh;
-  grid-template-rows: 10% 90% 10%;
+  grid-template-rows: auto 1fr auto;
   gap: 10px;
   grid-template-columns: 1fr 4fr;
 }
@@ -143,13 +148,18 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
+  .principal h1 {
+    font-size: 1.2rem;
+  }
   .contenido {
-    grid-template-columns: 1fr;
-    gap: 160px;
+    gap: 5px;
   }
   .card {
-    width: 100%;
-    padding: 15px;
+    max-width: 100%;
+    padding: 10px;
+  }
+  .icons {
+    font-size: large;
   }
 }
 @media (max-width: 700px) {
@@ -157,6 +167,14 @@ footer a:hover {
     display: none;
   }
   .contenido {
-    width: 100vh;
+    padding: 10px;
+    justify-content: center;
+  }
+  .grid-conteiner {
+    grid-template-areas:
+      "header"
+      "contenido"
+      "pie";
+    grid-template-columns: 1fr;
   }
 }
